@@ -1,0 +1,29 @@
+# Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+pubspec.lock
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Platform (generated after flutter create)
+android/.gradle/
+android/local.properties
+android/**/GeneratedPluginRegistrant.java
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+
+# Secrets — never commit
+lib/config.local.dart
+.env
+
+# OS
+.DS_Store
+Thumbs.db
