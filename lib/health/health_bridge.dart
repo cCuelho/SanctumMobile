@@ -32,7 +32,11 @@ class HealthBridge {
   }
 
   Future<bool> requestPermissions() async {
-    return _health.requestAuthorization(_readTypes);
+    await _health.configure();
+    return _health.requestAuthorization(
+      _readTypes,
+      permissions: List.filled(_readTypes.length, HealthDataAccess.READ),
+    );
   }
 
   /// Fetch last [days] days and normalize to ingest records.
