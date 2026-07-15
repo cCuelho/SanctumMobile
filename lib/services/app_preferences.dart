@@ -6,10 +6,11 @@ class AppPreferences {
 
   final SharedPreferences _prefs;
 
+  static const keyApiBase = 'sanctum_api_base';
   static const _keyAuthenticated = 'sanctum_authenticated';
   static const _keyOnboardingComplete = 'sanctum_onboarding_complete';
   static const _keyDisplayName = 'sanctum_display_name';
-  static const _keyApiBase = 'sanctum_api_base';
+  static const _keyApiBase = keyApiBase;
   static const _keyIngestToken = 'sanctum_ingest_token';
   static const _keyServerReachable = 'sanctum_server_reachable';
   static const _keyServerCheckedAt = 'sanctum_server_checked_at';

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sanctum Mobile — Navigation Map</title>
+  <style>
+    :root { font-family: system-ui, -apple-system, Segoe UI, sans-serif; color: #0f172a; background: #f8f7f4; }
+    body { margin: 0; padding: 24px; max-width: 1100px; margin-inline: auto; }
+    h1 { margin-bottom: 0.25rem; }
+    .meta { color: #475569; margin-bottom: 2rem; }
+    .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; margin-bottom: 24px; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+    .card header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .num { background: #2e2a6e; color: #fff; font-weight: 700; border-radius: 8px; padding: 4px 10px; font-size: 0.85rem; }
+    .shot img { width: 100%; max-width: 390px; border-radius: 16px; border: 1px solid #cbd5e1; display: block; }
+    .missing { color: #a8435f; font-style: italic; }
+    dl { display: grid; grid-template-columns: 120px 1fr; gap: 6px 12px; margin: 12px 0 0; }
+    dt { font-weight: 600; color: #64748b; }
+    dd { margin: 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th, td { border: 1px solid #e2e8f0; padding: 8px; text-align: left; }
+    th { background: #f1f5f9; }
+    .failures { background: #fff5f5; border: 1px solid #fecaca; border-radius: 8px; padding: 12px 20px; }
+  </style>
+</head>
+<body>
+  <h1>Sanctum Mobile — Navigation Map</h1>
+  <p class="meta">Pages: 27 · Edges: 24 · Failures: 9 · Screenshots on disk: 27</p>
+  <p class="meta">Share this file plus the <code>screenshots/</code> folder with your UX specialist. Open locally in Chrome or Safari.</p>
+
+  
+<section class="card" id="auth">
+  <header>
+    <span class="num">01</span>
+    <h2>Connect Sanctum</h2>
+  </header>
+  <div class="shot"><img src="screenshots/000_auth.png" alt="Connect Sanctum" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Splash timeout → unauthenticated</dd>
+    <dt>Route</dt><dd><code>/auth</code></dd>
+    <dt>Screen ID</dt><dd><code>auth</code></dd>
+  </dl>
+  <p><strong>Visible:</strong> Connect Sanctum, Continue</p>
+</section>
+<section class="card" id="onboarding_welcome">
+  <header>
+    <span class="num">02</span>
+    <h2>Onboarding — Welcome</h2>
+  </header>
+  <div class="shot"><img src="screenshots/001_onboarding_welcome.png" alt="Onboarding — Welcome" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Auth → New user</dd>
+    <dt>Route</dt><dd><code>/onboarding</code></dd>
+    <dt>Screen ID</dt><dd><code>onboarding_welcome</code></dd>
+  </dl>
+  <p><strong>Visible:</strong> Welcome to Sanctum, Next</p>
+</section>
+<section class="card" id="onboarding_focus">
+  <header>
+    <span class="num">03</span>
+    <h2>Onboarding — Choose Focus</h2>
+  </header>
+  <div class="shot"><img src="screenshots/002_onboarding_focus.png" alt="Onboarding — Choose Focus" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Onboarding welcome → Next</dd>
+    <dt>Route</dt><dd><code>/onboarding</code></dd>
+    <dt>Screen ID</dt><dd><code>onboarding_focus</code></dd>
+  </dl>
+  <p><strong>Visible:</strong> Sleep Optimization, Rehabilitation</p>
+</section>
+<section class="card" id="onboarding_protocols">
+  <header>
+    <span class="num">04</span>
+    <h2>Onboarding — Protocols</h2>
+  </header>
+  <div class="shot"><img src="screenshots/003_onboarding_protocols.png" alt="Onboarding — Protocols" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Focus step → Next</dd>
+    <dt>Route</dt><dd><code>/onboarding</code></dd>
+    <dt>Screen ID</dt><dd><code>onboarding_protocols</code></dd>
+  </dl>
+  
+</section>
+<section class="card" id="onboarding_device">
+  <header>
+    <span class="num">05</span>
+    <h2>Onboarding — Device</h2>
+  </header>
+  <div class="shot"><img src="screenshots/004_onboarding_device.png" alt="Onboarding — Device" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Protocols step → Next</dd>
+    <dt>Route</dt><dd><code>/onboarding</code></dd>
+    <dt>Screen ID</dt><dd><code>onboarding_device</code></dd>
+  </dl>
+  <p><strong>Visible:</strong> Connect a device, Skip device sync</p>
+</section>
+<section class="card" id="shell_input">
+  <header>
+    <span class="num">06</span>
+    <h2>INPUT (Home)</h2>
+  </header>
+  <div class="shot"><img src="screenshots/005_shell_input.png" alt="INPUT (Home)" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Onboarding skip device → shell</dd>
+    <dt>Route</dt><dd><code>/shell</code></dd>
+    <dt>Screen ID</dt><dd><code>shell_input</code></dd>
+  </dl>
+  <p><strong>Visible:</strong> Input, Insights, Menu</p>
+</section>
+<section class="card" id="shell_insights">
+  <header>
+    <span class="num">07</span>
+    <h2>INSIGHTS</h2>
+  </header>
+  <div class="shot"><img src="screenshots/006_shell_insights.png" alt="INSIGHTS" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Bottom nav → Insights</dd>
+    <dt>Route</dt><dd><code>/shell</code></dd>
+    <dt>Screen ID</dt><dd><code>shell_insights</code></dd>
+  </dl>
+  <p><strong>Visible:</strong> What Sanctum learned</p>
+</section>
+<section class="card" id="shell_input">
+  <header>
+    <span class="num">08</span>
+    <h2>INPUT</h2>
+  </header>
+  <div class="shot"><img src="screenshots/007_shell_input.png" alt="INPUT" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Bottom nav → Input</dd>
+    <dt>Route</dt><dd><code>/shell</code></dd>
+    <dt>Screen ID</dt><dd><code>shell_input</code></dd>
+  </dl>
+  
+</section>
+<section class="card" id="focus_switcher">
+  <header>
+    <span class="num">09</span>
+    <h2>Focus Switcher Sheet</h2>
+  </header>
+  <div class="shot"><img src="screenshots/008_focus_switcher.png" alt="Focus Switcher Sheet" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Header focus title tap</dd>
+    <dt>Route</dt><dd><code>—</code></dd>
+    <dt>Screen ID</dt><dd><code>focus_switcher</code></dd>
+  </dl>
+  <p><strong>Visible:</strong> Switch Focus, Add Focus</p>
+</section>
+<section class="card" id="protocols_list">
+  <header>
+    <span class="num">10</span>
+    <h2>Protocols</h2>
+  </header>
+  <div class="shot"><img src="screenshots/009_protocols_list.png" alt="Protocols" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>INPUT → View all / Add protocol</dd>
+    <dt>Route</dt><dd><code>/protocols</code></dd>
+    <dt>Screen ID</dt><dd><code>protocols_list</code></dd>
+  </dl>
+  
+</section>
+<section class="card" id="capture_vitals">
+  <header>
+    <span class="num">11</span>
+    <h2>Capture — Vitals / Check-in</h2>
+  </header>
+  <div class="shot"><img src="screenshots/010_capture_vitals.png" alt="Capture — Vitals / Check-in" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>INPUT card → Daily Check-In</dd>
+    <dt>Route</dt><dd><code>/capture/form</code></dd>
+    <dt>Screen ID</dt><dd><code>capture_vitals</code></dd>
+  </dl>
+  
+</section>
+<section class="card" id="menu">
+  <header>
+    <span class="num">12</span>
+    <h2>More / Menu</h2>
+  </header>
+  <div class="shot"><img src="screenshots/011_menu.png" alt="More / Menu" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Bottom nav → Menu</dd>
+    <dt>Route</dt><dd><code>/menu</code></dd>
+    <dt>Screen ID</dt><dd><code>menu</code></dd>
+  </dl>
+  <p><strong>Visible:</strong> Devices, Settings, Sign out</p>
+</section>
+<section class="card" id="menu__more_devices">
+  <header>
+    <span class="num">13</span>
+    <h2>Devices</h2>
+  </header>
+  <div class="shot"><img src="screenshots/012_menu__more_devices.png" alt="Devices" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Menu → Devices</dd>
+    <dt>Route</dt><dd><code>/more/devices</code></dd>
+    <dt>Screen ID</dt><dd><code>menu__more_devices</code></dd>
+  </dl>
+  
+</section>
+<section class="card" id="device_bridge">
+  <header>
+    <span class="num">14</span>
+    <h2>Device Bridge / Wearable Sync</h2>
+  </header>
+  <div class="shot"><img src="screenshots/013_device_bridge.png" alt="Device Bridge / Wearable Sync" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Devices → Device bridge</dd>
+    <dt>Route</dt><dd><code>/more/device-bridge</code></dd>
+    <dt>Screen ID</dt><dd><code>device_bridge</code></dd>
+  </dl>
+  
+</section>
+<section class="card" id="menu__more_goals">
+  <header>
+    <span class="num">15</span>
+    <h2>Goals</h2>
+  </header>
+  <div class="shot"><img src="screenshots/014_menu__more_goals.png" alt="Goals" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Menu → Goals</dd>
+    <dt>Route</dt><dd><code>/more/goals</code></dd>
+    <dt>Screen ID</dt><dd><code>menu__more_goals</code></dd>
+  </dl>
+  
+</section>
+<section class="card" id="menu__more_reports">
+  <header>
+    <span class="num">16</span>
+    <h2>Reports</h2>
+  </header>
+  <div class="shot"><img src="screenshots/015_menu__more_reports.png" alt="Reports" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Menu → Reports</dd>
+    <dt>Route</dt><dd><code>/more/reports</code></dd>
+    <dt>Screen ID</dt><dd><code>menu__more_reports</code></dd>
+  </dl>
+  
+</section>
+<section class="card" id="menu__more_data">
+  <header>
+    <span class="num">17</span>
+    <h2>Data management</h2>
+  </header>
+  <div class="shot"><img src="screenshots/016_menu__more_data.png" alt="Data management" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Menu → Data management</dd>
+    <dt>Route</dt><dd><code>/more/data</code></dd>
+    <dt>Screen ID</dt><dd><code>menu__more_data</code></dd>
+  </dl>
+  
+</section>
+<section class="card" id="menu__more_settings">
+  <header>
+    <span class="num">18</span>
+    <h2>Settings</h2>
+  </header>
+  <div class="shot"><img src="screenshots/017_menu__more_settings.png" alt="Settings" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Menu → Settings</dd>
+    <dt>Route</dt><dd><code>/more/settings</code></dd>
+    <dt>Screen ID</dt><dd><code>menu__more_settings</code></dd>
+  </dl>
+  
+</section>
+<section class="card" id="menu__more_practitioner">
+  <header>
+    <span class="num">19</span>
+    <h2>Practitioner mode</h2>
+  </header>
+  <div class="shot"><img src="screenshots/018_menu__more_practitioner.png" alt="Practitioner mode" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Menu → Practitioner mode</dd>
+    <dt>Route</dt><dd><code>/more/practitioner</code></dd>
+    <dt>Screen ID</dt><dd><code>menu__more_practitioner</code></dd>
+  </dl>
+  
+</section>
+<section class="card" id="menu__more_library">
+  <header>
+    <span class="num">20</span>
+    <h2>Library</h2>
+  </header>
+  <div class="shot"><img src="screenshots/019_menu__more_library.png" alt="Library" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Menu → Library</dd>
+    <dt>Route</dt><dd><code>/more/library</code></dd>
+    <dt>Screen ID</dt><dd><code>menu__more_library</code></dd>
+  </dl>
+  
+</section>
+<section class="card" id="auth_returning">
+  <header>
+    <span class="num">21</span>
+    <h2>Connect Sanctum (after sign out)</h2>
+  </header>
+  <div class="shot"><img src="screenshots/020_auth_returning.png" alt="Connect Sanctum (after sign out)" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Menu → Sign out</dd>
+    <dt>Route</dt><dd><code>/auth</code></dd>
+    <dt>Screen ID</dt><dd><code>auth_returning</code></dd>
+  </dl>
+  
+</section>
+<section class="card" id="onboarding_resume">
+  <header>
+    <span class="num">22</span>
+    <h2>Onboarding (resumed)</h2>
+  </header>
+  <div class="shot"><img src="screenshots/021_onboarding_resume.png" alt="Onboarding (resumed)" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Continue without prior onboarded state</dd>
+    <dt>Route</dt><dd><code>/onboarding</code></dd>
+    <dt>Screen ID</dt><dd><code>onboarding_resume</code></dd>
+  </dl>
+  
+</section>
+<section class="card" id="shell_input_returning">
+  <header>
+    <span class="num">23</span>
+    <h2>INPUT (returning user)</h2>
+  </header>
+  <div class="shot"><img src="screenshots/022_shell_input_returning.png" alt="INPUT (returning user)" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Auth → Continue</dd>
+    <dt>Route</dt><dd><code>/shell</code></dd>
+    <dt>Screen ID</dt><dd><code>shell_input_returning</code></dd>
+  </dl>
+  
+</section>
+<section class="card" id="shell_insights_r2">
+  <header>
+    <span class="num">24</span>
+    <h2>INSIGHTS</h2>
+  </header>
+  <div class="shot"><img src="screenshots/023_shell_insights_r2.png" alt="INSIGHTS" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Bottom nav → Insights</dd>
+    <dt>Route</dt><dd><code>/shell</code></dd>
+    <dt>Screen ID</dt><dd><code>shell_insights_r2</code></dd>
+  </dl>
+  <p><strong>Visible:</strong> What Sanctum learned</p>
+</section>
+<section class="card" id="shell_input_r2">
+  <header>
+    <span class="num">25</span>
+    <h2>INPUT</h2>
+  </header>
+  <div class="shot"><img src="screenshots/024_shell_input_r2.png" alt="INPUT" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Bottom nav → Input</dd>
+    <dt>Route</dt><dd><code>/shell</code></dd>
+    <dt>Screen ID</dt><dd><code>shell_input_r2</code></dd>
+  </dl>
+  
+</section>
+<section class="card" id="focus_switcher_r2">
+  <header>
+    <span class="num">26</span>
+    <h2>Focus Switcher Sheet</h2>
+  </header>
+  <div class="shot"><img src="screenshots/025_focus_switcher_r2.png" alt="Focus Switcher Sheet" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Header focus title tap</dd>
+    <dt>Route</dt><dd><code>—</code></dd>
+    <dt>Screen ID</dt><dd><code>focus_switcher_r2</code></dd>
+  </dl>
+  <p><strong>Visible:</strong> Switch Focus, Add Focus</p>
+</section>
+<section class="card" id="menu_r2">
+  <header>
+    <span class="num">27</span>
+    <h2>More / Menu</h2>
+  </header>
+  <div class="shot"><img src="screenshots/026_menu_r2.png" alt="More / Menu" loading="lazy" /></div>
+  <dl>
+    <dt>Reached via</dt><dd>Bottom nav → Menu</dd>
+    <dt>Route</dt><dd><code>/menu</code></dd>
+    <dt>Screen ID</dt><dd><code>menu_r2</code></dd>
+  </dl>
+  <p><strong>Visible:</strong> Devices, Settings, Sign out</p>
+</section>
+
+  <section class="card">
+    <h2>Navigation edges</h2>
+    <table>
+      <thead><tr><th>From</th><th>Action</th><th>To</th><th>OK</th></tr></thead>
+      <tbody><tr><td><code>splash</code></td><td>auto-route</td><td><code>auth</code></td><td>✓</td></tr><tr><td><code>auth</code></td><td>Tap &quot;New here — set up my journal&quot;</td><td><code>onboarding_welcome</code></td><td>✓</td></tr><tr><td><code>auth</code></td><td>New here — set up my journal</td><td><code>onboarding_welcome</code></td><td>✓</td></tr><tr><td><code>onboarding_welcome</code></td><td>Next</td><td><code>onboarding_focus</code></td><td>✓</td></tr><tr><td><code>onboarding_focus</code></td><td>Next</td><td><code>onboarding_protocols</code></td><td>✓</td></tr><tr><td><code>onboarding_protocols</code></td><td>Next</td><td><code>onboarding_device</code></td><td>✓</td></tr><tr><td><code>onboarding_device</code></td><td>Skip device sync</td><td><code>shell_input</code></td><td>✓</td></tr><tr><td><code>shell_input</code></td><td>Insights tab</td><td><code>shell_insights</code></td><td>✓</td></tr><tr><td><code>shell_insights</code></td><td>Input tab</td><td><code>shell_input</code></td><td>✓</td></tr><tr><td><code>shell_input</code></td><td>Tap focus title</td><td><code>focus_switcher</code></td><td>✓</td></tr><tr><td><code>shell_input</code></td><td>Menu tab</td><td><code>menu</code></td><td>✓</td></tr><tr><td><code>menu</code></td><td>Tap Devices</td><td><code>menu__more_devices</code></td><td>✓</td></tr><tr><td><code>menu</code></td><td>Tap Goals</td><td><code>menu__more_goals</code></td><td>✓</td></tr><tr><td><code>menu</code></td><td>Tap Reports</td><td><code>menu__more_reports</code></td><td>✓</td></tr><tr><td><code>menu</code></td><td>Tap Data management</td><td><code>menu__more_data</code></td><td>✓</td></tr><tr><td><code>menu</code></td><td>Tap Settings</td><td><code>menu__more_settings</code></td><td>✓</td></tr><tr><td><code>menu</code></td><td>Tap Practitioner mode</td><td><code>menu__more_practitioner</code></td><td>✓</td></tr><tr><td><code>menu</code></td><td>Tap Library</td><td><code>menu__more_library</code></td><td>✓</td></tr><tr><td><code>menu</code></td><td>Sign out</td><td><code>auth_returning</code></td><td>✓</td></tr><tr><td><code>auth_returning</code></td><td>Continue</td><td><code>shell_input_returning</code></td><td>✓</td></tr><tr><td><code>shell_input_r2</code></td><td>Insights tab</td><td><code>shell_insights_r2</code></td><td>✓</td></tr><tr><td><code>shell_insights_r2</code></td><td>Input tab</td><td><code>shell_input_r2</code></td><td>✓</td></tr><tr><td><code>shell_input_r2</code></td><td>Tap focus title</td><td><code>focus_switcher_r2</code></td><td>✓</td></tr><tr><td><code>shell_input_r2</code></td><td>Menu tab</td><td><code>menu_r2</code></td><td>✓</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class='card failures'><h2>Automation gaps</h2><ul><li><strong>focus_switcher:close</strong>: No back navigation available</li><li><strong>nav:menu-for-signout</strong>: Text not found: &quot;Menu&quot;</li><li><strong>onboarding:skip-header</strong>: Text not found: &quot;Skip&quot;</li><li><strong>onboarding:resume-focus</strong>: Text not found: &quot;Sleep Optimization&quot;</li><li><strong>onboarding:resume-skip</strong>: Text not found: &quot;Skip device sync&quot;</li><li><strong>tab:insights_r2</strong>: Text not found: &quot;Insights&quot;</li><li><strong>tab:input_r2</strong>: Text not found: &quot;Input&quot;</li><li><strong>focus_switcher:close</strong>: No back navigation available</li><li><strong>tab:menu_r2</strong>: Text not found: &quot;Menu&quot;</li></ul><p>These did not stop the run; flows after them may be partial.</p></section>
+</body>
+</html>

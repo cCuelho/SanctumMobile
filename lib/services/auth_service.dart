@@ -12,6 +12,9 @@ class AuthService {
     required OsStateService osState,
   }) : _osState = osState;
 
+  /// When true, server health checks succeed without network (integration tests).
+  static bool integrationTestMode = false;
+
   final AppPreferences _prefs;
   final ServerConfigRepository _configRepo;
   final OsStateService _osState;
@@ -34,6 +37,23 @@ class AuthService {
   }
 
   Future<ServerCheckResult> checkServer({String? apiBaseUrl}) async {
+    if (integrationTestMode) {
+      final base = (apiBaseUrl ?? _prefs.apiBaseUrl ?? config.apiBaseUrl)
+          .trim()
+          .replaceAll(RegExp(r'/+$'), '');
+      if (base.isNotEmpty) {
+        await _configRepo.save(
+          apiBaseUrl: base,
+          ingestToken: _prefs.ingestToken ?? '',
+        );
+      }
+      await _prefs.setServerReachable(true);
+      return ServerCheckResult(
+        ok: true,
+        message: 'Integration test — server check bypassed.',
+      );
+    }
+
     final base = (apiBaseUrl ?? _prefs.apiBaseUrl ?? config.apiBaseUrl)
         .trim()
         .replaceAll(RegExp(r'/+$'), '');

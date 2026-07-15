@@ -1,0 +1,4 @@
+# Generated navigation map artifacts (screenshots are local-only).
+screenshots/
+session.json
+test_run.log

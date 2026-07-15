@@ -19,6 +19,9 @@ class OsStateService extends ChangeNotifier {
         _prefs = prefs,
         _clientFactory = clientFactory ?? ((c) => SanctumApiClient(c));
 
+  /// When true, OS state stays local-only (integration tests).
+  static bool integrationTestMode = false;
+
   final ServerConfigRepository _configRepo;
   final AppPreferences _prefs;
   final SanctumApiClient Function(SanctumConfig) _clientFactory;
@@ -43,6 +46,16 @@ class OsStateService extends ChangeNotifier {
 
   Future<void> hydrate() async {
     final local = _loadLocal();
+
+    if (integrationTestMode) {
+      _state = local;
+      await _persistLocal();
+      await _prefs.setOnboardingComplete(_state.onboarded);
+      _hydrated = true;
+      notifyListeners();
+      return;
+    }
+
     final client = _client();
 
     if (client != null) {
@@ -306,7 +319,7 @@ class OsStateService extends ChangeNotifier {
     notifyListeners();
 
     final client = _client();
-    if (client == null) return;
+    if (client == null || integrationTestMode) return;
 
     try {
       _state = await _saveToServer(next);

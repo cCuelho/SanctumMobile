@@ -1,0 +1,54 @@
+flowchart TD
+  classDef page fill:#f4f2ee,stroke:#2e2a6e,color:#0f172a
+  classDef fail stroke:#a8435f,stroke-dasharray:5 5
+  auth["Connect Sanctum"]:::page
+  onboarding_welcome["Onboarding — Welcome"]:::page
+  onboarding_focus["Onboarding — Choose Focus"]:::page
+  onboarding_protocols["Onboarding — Protocols"]:::page
+  onboarding_device["Onboarding — Device"]:::page
+  shell_input["INPUT (Home)"]:::page
+  shell_insights["INSIGHTS"]:::page
+  shell_input["INPUT"]:::page
+  focus_switcher["Focus Switcher Sheet"]:::page
+  protocols_list["Protocols"]:::page
+  capture_vitals["Capture — Vitals / Check-in"]:::page
+  menu["More / Menu"]:::page
+  menu__more_devices["Devices"]:::page
+  device_bridge["Device Bridge / Wearable Sync"]:::page
+  menu__more_goals["Goals"]:::page
+  menu__more_reports["Reports"]:::page
+  menu__more_data["Data management"]:::page
+  menu__more_settings["Settings"]:::page
+  menu__more_practitioner["Practitioner mode"]:::page
+  menu__more_library["Library"]:::page
+  auth_returning["Connect Sanctum (after sign out)"]:::page
+  onboarding_resume["Onboarding (resumed)"]:::page
+  shell_input_returning["INPUT (returning user)"]:::page
+  shell_insights_r2["INSIGHTS"]:::page
+  shell_input_r2["INPUT"]:::page
+  focus_switcher_r2["Focus Switcher Sheet"]:::page
+  menu_r2["More / Menu"]:::page
+  splash -->|auto-route| auth
+  auth -->|Tap 'New here — set up my journal'| onboarding_welcome
+  auth -->|New here — set up my journal| onboarding_welcome
+  onboarding_welcome -->|Next| onboarding_focus
+  onboarding_focus -->|Next| onboarding_protocols
+  onboarding_protocols -->|Next| onboarding_device
+  onboarding_device -->|Skip device sync| shell_input
+  shell_input -->|Insights tab| shell_insights
+  shell_insights -->|Input tab| shell_input
+  shell_input -->|Tap focus title| focus_switcher
+  shell_input -->|Menu tab| menu
+  menu -->|Tap Devices| menu__more_devices
+  menu -->|Tap Goals| menu__more_goals
+  menu -->|Tap Reports| menu__more_reports
+  menu -->|Tap Data management| menu__more_data
+  menu -->|Tap Settings| menu__more_settings
+  menu -->|Tap Practitioner mode| menu__more_practitioner
+  menu -->|Tap Library| menu__more_library
+  menu -->|Sign out| auth_returning
+  auth_returning -->|Continue| shell_input_returning
+  shell_input_r2 -->|Insights tab| shell_insights_r2
+  shell_insights_r2 -->|Input tab| shell_input_r2
+  shell_input_r2 -->|Tap focus title| focus_switcher_r2
+  shell_input_r2 -->|Menu tab| menu_r2
